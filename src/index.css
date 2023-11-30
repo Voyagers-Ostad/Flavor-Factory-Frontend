@@ -9,6 +9,25 @@ body {
   color: #343a40;
   line-height: 1;
 }
+/* header */
+.container-fluid .header {
+  background: #eee;
+  box-shadow: 0 8px 8px -4px lightblue;
+}
+.navbar a{
+  text-decoration: none;  
+}
+.navbar span { 
+  color: #000000;
+  font-size: 18px;
+}
+.signInBtn{
+  background-color: #dddd76;
+  border: none;
+}
+.signInBtn:hover{
+  background-color: rgb(184, 184, 7);
+}
 /* cover picture  */
 .about-bg-pic {
   background-image: url("./assets/about_us_background.jpg");
@@ -18,6 +37,7 @@ body {
   /* background-color: rgba(255, 255, 255, 0.25); */
   display: grid;
   /* place-items: center; */
+  margin-top: 10px;
 }
 
 .about-bg-pic p {
@@ -141,7 +161,23 @@ body {
   flex-direction: column;
   gap: 12px;
 }
-
+/* footer  */
+.site_footer {
+  background-color: #ffffff;
+  color: black;
+  font-family: "Amita", serif;
+}
+.site_footer a{
+  text-decoration: none;
+  color: #000000;
+  line-height: 1.5;
+}
+.site_footer a:hover{
+  color: #d65b5b;
+}
+.footer_logo {
+  color: #900009;
+}
 /* OPEN STATE */
 .open {
   border-top: 4px solid #087f5b;

@@ -1,16 +1,21 @@
-import faqs from "./data/faq.js";
 import "bootstrap/dist/css/bootstrap.css";
-import Accordion from "./components/accordion/Accordion.jsx";
-import About from "./components/aboutContents/About.jsx";
-import AboutCoverPicture from "./components/aboutCoverPicture/AboutCoverPicture.jsx";
+
+import React from "react";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AboutUs from "./pages/AboutUs.jsx";
+import HomePage from "./pages/HomePage.jsx";
 
 const App = () => {
   return (
-    <div>
-      <AboutCoverPicture />
-      <About />
-      <Accordion data={faqs} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutUs />} />
+        {/* <Route path="/">{<HomePage />}</Route>
+        <Route path="/about">{<AboutUs />}</Route> */}
+      </Routes>
+    </BrowserRouter>
   );
 };
 
