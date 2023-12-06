@@ -59,7 +59,7 @@ const Header = () => {
   }, []);
   // cuisine
   const [dropdownValuesCuisine, setDropdownValuesCuisine] = useState([]);
-  const typeCuisine = "occasion";
+  const typeCuisine = "cuisine";
   const apiLinkCuisine =
     "https://flavor-factory-m190.onrender.com/api/v1/recipe/" + typeCuisine;
   useEffect(() => {
