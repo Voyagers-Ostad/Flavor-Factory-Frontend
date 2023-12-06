@@ -10,9 +10,12 @@ body {
   line-height: 1;
 }
 /* header */
-.container-fluid .header {
+.container-fluid.header {
   background: #eee;
-  box-shadow: 0 8px 8px -4px lightblue;
+  box-shadow: 0 8px 8px -4px rgb(230, 212, 173);
+}
+.navbar{
+  background-color: #e3e0d9;
 }
 .navbar a{
   text-decoration: none;  
@@ -28,6 +31,64 @@ body {
 .signInBtn:hover{
   background-color: rgb(184, 184, 7);
 }
+/* dropdown */
+/* Example CSS for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  /* background-color: #3498db; */
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: -20px;
+}
+.dropdown-content label {
+  display: block;
+  line-height: 2;
+  margin: 5px;
+  cursor: pointer;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* filter elements */
+.filter-elem{
+  display: flex;
+}
+.filter-badge{
+  background-color: #ffffff;
+  margin-right: .5rem;
+  padding: 0 .625rem;
+}
+.filter-badge a{
+  margin-left: 8px;
+}
+/* Add more styling as needed */
 /* cover picture  */
 .about-bg-pic {
   background-image: url("./assets/about_us_background.jpg");
@@ -163,9 +224,11 @@ body {
 }
 /* footer  */
 .site_footer {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   color: black;
   font-family: "Amita", serif;
+  background: #eee;
+  box-shadow: 10px -4px 10px rgb(230, 212, 173);
 }
 .site_footer a{
   text-decoration: none;

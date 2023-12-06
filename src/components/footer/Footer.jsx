@@ -46,13 +46,13 @@ const Footer = () => {
           <br />
         </div>
         <div className="col-lg-3 col-md-3 col-sm-6 col-12">
-          <a className="d-inline-block mx-3">
+          <a className="d-inline-block mx-3" href="#">
             <i className="fa-brands fa-facebook fa-3x"></i>
           </a>
-          <a className="d-inline-block mx-3">
+          <a className="d-inline-block mx-3" href="#">
             <i className="fa-brands fa-instagram fa-3x"></i>
           </a>
-          <a className="d-inline-block mx-3">
+          <a className="d-inline-block mx-3" href="#">
             <i className="fa-brands fa-twitter fa-3x"></i>
           </a>
         </div>
