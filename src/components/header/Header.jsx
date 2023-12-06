@@ -18,7 +18,8 @@ const Header = () => {
   // meals
   const [dropdownValues, setDropdownValues] = useState([]);
   const type = "meals";
-  const apiLink = "http://localhost:5000/api/v1/recipe/" + type;
+  const apiLink =
+    "https://flavor-factory-m190.onrender.com/api/v1/recipe/" + type;
   useEffect(() => {
     // Fetch data from the backend when the component mounts
     axios
@@ -31,7 +32,8 @@ const Header = () => {
   // ingredients
   const [dropdownValuesIngredient, setDropdownValuesIngredient] = useState([]);
   const typeBake = "ingredient";
-  const apiLinkBake = "http://localhost:5000/api/v1/recipe/" + typeBake;
+  const apiLinkBake =
+    "https://flavor-factory-m190.onrender.com/api/v1/recipe/" + typeBake;
   useEffect(() => {
     // Fetch data from the backend when the component mounts
     axios
@@ -44,7 +46,8 @@ const Header = () => {
   // occassions
   const [dropdownValuesOccassion, setDropdownValuesOccasion] = useState([]);
   const typeOcs = "occasion";
-  const apiLinkOcs = "http://localhost:5000/api/v1/recipe/" + typeOcs;
+  const apiLinkOcs =
+    "https://flavor-factory-m190.onrender.com/api/v1/recipe/" + typeOcs;
   useEffect(() => {
     // Fetch data from the backend when the component mounts
     axios
@@ -57,7 +60,8 @@ const Header = () => {
   // cuisine
   const [dropdownValuesCuisine, setDropdownValuesCuisine] = useState([]);
   const typeCuisine = "occasion";
-  const apiLinkCuisine = "http://localhost:5000/api/v1/recipe/" + typeCuisine;
+  const apiLinkCuisine =
+    "https://flavor-factory-m190.onrender.com/api/v1/recipe/" + typeCuisine;
   useEffect(() => {
     // Fetch data from the backend when the component mounts
     axios
