@@ -1,0 +1,319 @@
+.sectionStyle {
+  background-image: url('./images/hero-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+.DinerHead {
+  margin-bottom: 0px;
+  height: 450px;
+  }
+
+.dinnercardOne {
+  width: 350px;
+  height: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.dinnercardTwo {
+  width: 350px;
+  height: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.dinnerHeader {
+  width: 100%;
+  height: 80px;
+  background-color: #F2EFE9;
+}
+
+.mainDinnerSection {
+  background-color: #F2EFE9;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.dinnercardThree {
+  width: 350px;
+  height: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.dinnercardPic {
+  background-image: url('./images/dinner.png');
+  width: 350px;
+  height: 250px;
+  background-repeat: no-repeat;
+}
+
+.dinnercardInfo {
+  font-size: 10px;
+  text-align: center;
+  margin: 0%;
+}
+
+.dinnerRatings {
+  background-image: url('./images/circle-heart.png');
+  width: 350px;
+  height: 30px;
+  background-position: 265px 0px ;
+  background-repeat: no-repeat;
+  font-size: 20px;
+} 
+
+.sectionStyle .headerOne {
+  font-size: 50px;
+}
+
+.sectionStyle .headerTwo {
+  font-size: 130px;
+}
+
+.headerOne {
+  margin-top: -21.5px;
+  margin-bottom: -71.5px;
+}
+
+.headerTwo {
+  margin-top: 20.1px;
+  margin-bottom: -28.9px;
+}
+
+.sectionStyle .headerThree {
+  font-size: 30px;
+}
+
+.headerThree {
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+.DSSection {
+  background-color: #F2EFE9;
+  height: 300px;
+}
+
+.mainProfileSection{
+  background-color: #ffffff;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.profilecard {
+  width: 350px;
+  height: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.profilecardPic {
+  background-image: url('./images/profile.png');
+  width: 350px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profileRatings {
+  background-image: url('./images/user-check.png');
+  width: 350px;
+  height: 30px;
+  background-position: 265px 0px ;
+  background-repeat: no-repeat;
+  font-size: 20px;
+} 
+
+.profileHeader {
+  width: 100%;
+  height: 80px;
+  background-color: #ffffff;
+}
+
+.profilecardInfo {
+    font-size: 10px;
+    text-align: center;
+    margin: 0%;
+}
+
+.profileHeader {
+  width: 100%;
+  height: 80px;
+  background-color: #ffffff;
+}
+
+.ProfileHead {
+  height: 450px;
+  margin-bottom: 40px;
+}
+
+.BakingHead {
+  height: 450px;
+  margin-bottom: 40px;
+  background-color: #F2EFE9
+}
+
+.BakingHeader {
+  background-image: url('./images/BakingPic.png');
+  background-size: cover;
+  background-position: 10px 20px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 250px;
+  background-color: #F2EFE9;
+  margin-bottom: 10px;
+}
+
+.BHone {
+  text-align: center;
+  padding-top: 45px;
+  font-size: 100px;
+  color: #ffffff;
+}
+
+.mainBakingSection {
+  background-color: #F2EFE9;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.TipsHead {
+  margin-top: 170px;
+  height: 450px;
+}
+
+.bakedcard {
+  width: 350px;
+  height: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.bakedcardPic {
+  background-image: url('./images/basicbread.png');
+  width: 350px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainTipsSection {
+  background-image: url('./images/flatware.png');
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.TipsH {
+  font-size: 60px;
+  margin: 0%;
+}
+
+.TipsCards {
+  height: 335px;
+  background-color: #EDD9C7;
+  display: flex;
+}
+
+.TipsCardsPic {
+  background-image: url('./images/tips.png');
+  width: 350px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.TipsCardInfo {
+  width: 350px;
+  height: 100px;
+}
+
+.TipsCardOne {
+  height: 350px;
+  width: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.TipsCardTwo {
+  height: 350px;
+  width: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+div.bakedcard:nth-child(1) {
+  margin-left: 33px;
+}
+
+.TipsCardOne {
+  margin-left: 33px;
+}
+
+.mainBlogsSection {
+  background-image: url('./images/blog.png');
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.BlogsHeader {
+  height: 150px;
+}
+
+.BlogsCardsPic {
+  background-image: url('./images/image 10.png');
+  width: 350px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.BlogsCardOne {
+  height: 350px;
+  width: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-left: 33px;
+}
+
+.BlogsCardTwo {
+  height: 350px;
+  width: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.BlogsCards {
+  height: 335px;
+  background-color: #B6AEAB;
+  display: flex;
+}
+
+.BlogsCards {
+  padding-top: 30px;
+}

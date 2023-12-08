@@ -1,7 +1,22 @@
-import "bootstrap/dist/css/bootstrap.css";
+import HeroSection from './components/HeroSection'
+import './App.css'
+import DinerSection from './components/DinnerSection'
+import PeopleSection from './components/PeopleSection'
+import BakingSection from './components/BakingSection'
+import TipsSection from './components/TipsSection'
+import BlogsSection from './components/BlogsSection'
 
-const App = () => {
-  return <div></div>;
-};
+function App() {
+  return (
+    <>
+      <HeroSection />
+      <DinerSection/>
+      <PeopleSection/>
+      <BakingSection/>
+      <TipsSection/>
+      <BlogsSection/>
+    </>
+  )
+}
 
-export default App;
+export default App
