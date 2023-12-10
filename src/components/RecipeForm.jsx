@@ -53,13 +53,21 @@ const RecipeForm = () => {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
   
-    // For radio buttons, directly set boolean value
-    const radioValue = type === 'radio' ? (value === 'true') : value;
-  
-    setRecipe((prevRecipe) => ({
-      ...prevRecipe,
-      [name]: name === 'is_bake' ? checked : radioValue,
-    }));
+    // Check if it's a radio button and it's already checked
+    if (type === 'radio' && checked) {
+      // If checked, set the value to an empty string
+      setRecipe((prevRecipe) => ({
+        ...prevRecipe,
+        [name]: '',
+      }));
+    } else {
+      // If not a radio button or not checked, update the value
+      const radioValue = type === 'radio' ? (value === 'true') : value;
+      setRecipe((prevRecipe) => ({
+        ...prevRecipe,
+        [name]: radioValue,
+      }));
+    }
   };
   
 
