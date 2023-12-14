@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage.jsx";
 import SignInPage from "./pages/SignInPage.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import ActivationPage from "./components/ActivationPage.jsx";
+import Blog from "./pages/Blog.jsx";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         {/* <Route path="/activate/:activationToken" element={<ActivationPage />} /> */}
         {/* <Route path="/">{<HomePage />}</Route>
         <Route path="/about">{<AboutUs />}</Route> */}
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   );

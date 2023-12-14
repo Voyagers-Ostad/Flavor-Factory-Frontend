@@ -1,9 +1,10 @@
 // src/components/Homepage.js
-import FeaturedRecipesSlider from './FeaturedRecipesSlider';
-import FeaturedBlogPostsSlider from './FeaturedBlogPostsSlider'
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import React from 'react';
+import FeaturedRecipesSlider from "./FeaturedRecipesSlider";
+import FeaturedBlogPostsSlider from "./FeaturedBlogPostsSlider";
+import FeaturedKitchenPostsSlider from "./FeaturedKitchenPostsSlider";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import React from "react";
 
 const Homepage = () => {
   return (
@@ -44,7 +45,7 @@ const Homepage = () => {
       {/* Kitchen Tips Section */}
       <section className="featured-recipes">
         <h2 className="featuredrecipeheader">Kitchen Tips</h2>
-        <FeaturedBlogPostsSlider />
+        <FeaturedKitchenPostsSlider />
       </section>
 
       {/* Footer Section */}
