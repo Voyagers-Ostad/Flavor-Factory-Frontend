@@ -1,17 +1,16 @@
 import React from "react";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
+import UserDashboard from "../components/userDashboard/UserDashboard";
 
-import Homepage from "../components/Homepage";
-
-const HomePage = () => {
+const Dashboard = () => {
   return (
     <div>
-      {/* <Header /> */}
-      <Homepage />
+      <Header />
+      <UserDashboard />
       <Footer />
     </div>
   );
 };
 
-export default HomePage;
+export default Dashboard;

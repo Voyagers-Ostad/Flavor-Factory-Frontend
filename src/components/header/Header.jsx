@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import DropdownMenu from "../dropdown/DropdownMenu";
 
 const Header = () => {
-  const [selectedItems, setSelectedItems] = useState([]);
-
+  const [selectedItems, setSelectedItems] = useState([]); 
   const handleValueChange = (item, isChecked) => {
     // Update the selected items based on whether the checkbox is checked or unchecked
     if (isChecked) {
@@ -17,6 +16,7 @@ const Header = () => {
   };
   // meals
   const [dropdownValues, setDropdownValues] = useState([]);
+  const items = Array.from({ length: 10 }, (_, index) => `Item ${index + 1}`);
   const type = "meals";
   const apiLink =
     "https://flavor-factory-m190.onrender.com/api/v1/recipe/" + type;
@@ -103,7 +103,7 @@ const Header = () => {
                 <DropdownMenu
                   title={"Meals"}
                   values={dropdownValues}
-                  onValueChange={handleValueChange}
+                  onValueChange={handleValueChange}                  
                 />
               </div>
 

@@ -1,7 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import BackButton from "../backButton/BackButton";
 
 const SignIn = () => {
+  const history = useNavigate();
   //   for toggle
   const [isSignUpActive, setSignUpActive] = useState(false);
   const handleSignUp = () => {
@@ -19,6 +22,7 @@ const SignIn = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handlePasswordChange = (e) => {
     const newPassword = e.target.value;
@@ -46,9 +50,13 @@ const SignIn = () => {
           // Set the first error message to the state
           setErrorMessage(response.data.errors[0].msg);
         } else {
+          // await axios.post(
+          //   "https://flavor-factory-m190.onrender.com/api/v1/user/send-email",
+          //   { toEmail: signupEmail }
+          // );
           setSuccessMessage("Congratualation!! Your registration is complete!");
           setIsSuccessModalOpen(true);
-        }       
+        }
         console.log(response.data);
       } else {
         // Passwords don't match, handle error
@@ -60,11 +68,11 @@ const SignIn = () => {
     }
   };
   const handleCloseSuccessModal = () => {
-    setIsSuccessModalOpen(false);    
+    setIsSuccessModalOpen(false);
   };
   const handleSignInSubmit = async (e) => {
     e.preventDefault();
-    try {      
+    try {
       console.log(signupEmail);
       console.log(signupPassword.length);
       const requestData = {
@@ -72,12 +80,13 @@ const SignIn = () => {
         email: signupEmail,
         password: signupPassword,
       };
-      const response = await axios.get(
+      const response = await axios.post(
         "https://flavor-factory-m190.onrender.com/api/v1/user/login",
         {
           // params: requestData,
           // Note: Even though it's a GET request, you can use the 'data' property to send data in the request body
-          data: requestData,
+          email: signupEmail,
+          password: signupPassword,
         }
       );
 
@@ -86,9 +95,14 @@ const SignIn = () => {
         // Set the first error message to the state
         setErrorMessage(response.data.errors[0].msg);
       } else {
+        // console.log(response.data.token);
+        // navigate("/");
+        if (response.data.token) {
+          history("/dashboard", { state: { id: response.data.token } });
+        }
         setSuccessMessage("Login Successful");
-        setIsSuccessModalOpen(true);
-      }      
+        // setIsSuccessModalOpen(true);
+      }
       console.log(response.data);
     } catch (error) {
       // Handle authentication error
@@ -97,13 +111,11 @@ const SignIn = () => {
   };
   return (
     <div
-      className={`container ${isSignUpActive ? "active" : ""}`}
+      className={`container-signin ${isSignUpActive ? "active" : ""}`}
       id="container"
     >
       <div className="form-container sign-up ">
-        <a href="/" className="previous-btn round-btn">
-          &#8249;&#8249; Homepage
-        </a>
+        <BackButton />
         <form onSubmit={handleSignupSubmit}>
           <h1>Create Account</h1>
           <span style={{ color: "red" }}>{errorMessage}</span>
@@ -138,9 +150,7 @@ const SignIn = () => {
         </form>
       </div>
       <div className="form-container sign-in">
-        <a href="/" className="previous-btn round-btn">
-          &#8249;&#8249; Homepage
-        </a>
+        <BackButton />
         <form onSubmit={handleSignInSubmit}>
           <h1>Sign In</h1>
           <input

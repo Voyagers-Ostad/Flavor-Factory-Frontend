@@ -50,18 +50,18 @@ body {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  /* min-width: 160px; */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 2;
   margin-top: -20px;
 }
-.dropdown-content label {
+/* .dropdown-content label {
   flex: 1 1 calc(33.33% - 10px);
   display: block;
   line-height: 2;
   margin: 5px;
   cursor: pointer;
-}
+} */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -79,6 +79,17 @@ body {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+.dropdown-container {
+  min-width: 500px;
+  max-height: 250px;
+  overflow: scroll;
+}
+
+.dropdown-element {
+  padding: 8px;
+  /* border: 1px solid #ccc; */
+  margin: 2px;
 }
 /* filter elements */
 .filter-elem{
@@ -322,343 +333,214 @@ body {
   }
 }
 /* homepage  */
-.sectionStyle {
-  background-image: url('./images/hero-bg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 300px;
-  color: white;
-  text-align: center;
-  padding: 50px;
+/* Container Styles */
+.container {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.DinerHead {
-  margin-bottom: 0px;
-  height: 450px;
-}
-
-.dinnercardOne {
-  width: 350px;
-  height: 350px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.dinnercardTwo {
-  width: 350px;
-  height: 350px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.dinnerHeader {
-  width: 100%;
-  height: 80px;
-  background-color: #F2EFE9;
-  text-align: center;
-    padding-top: 10px;
-}
-
-.mainDinnerSection {
-  background-color: #F2EFE9;
+/* Hero Section Styles */
+.hero-section {
   display: flex;
-  padding-bottom: 10px;
-  justify-content: center;
-}
-
-.dinnercardThree {
-  width: 350px;
-  height: 350px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.dinnercardPic {
-  background-image: url('./images/dinner.png');
-  width: 350px;
-  height: 250px;
-  background-repeat: no-repeat;
-}
-
-.dinnercardInfo {
-  font-size: 22px;
+  background-image: url('./assets/heroBanner.svg');
+  /* Replace with your actual hero image URL */
+  background-size: cover;
+  background-position: center;
   text-align: center;
+  /* Align text to the left */
+  justify-content: flex-start;
+  /* Align contents to the left */
+  padding: 100px 0;
+  position: relative;
+  max-width: 100%;
+}
+
+
+.hero-content {
+  max-width: 600px;
+  margin-left: 0px;
+
+}
+
+.hero-content h1 {
+  margin-bottom: 20px;
+  font-family: 'Amita', serif;
+}
+
+.heroheaderone {
+  font-size: 5em;
   margin-top: 10px;
 }
 
-.dinnerRatings {
-  background-image: url('./images/circle-heart.png');
-  width: 350px;
-  height: 30px;
-  background-position: 265px 0px;
-  background-repeat: no-repeat;
-  font-size: 20px;
-  text-align: center;
+heroheadertwo {
+  font-size: 3.5em;
+  margin-bottom: 0;
 }
 
-.sectionStyle .headerOne {
-  font-size: 50px;
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
 }
 
-.sectionStyle .headerTwo {
-  font-size: 100px;
+/* Featured Recipes Section Styles */
+.featured-recipes {
+  margin-bottom: 80px;
 }
 
-.headerOne {
-  margin-top: -21.5px;
-  margin-bottom: -71.5px;
+.featuredrecipeheader {
+  font-size: xxx-large;
 }
 
-.headerTwo {
-  margin-top: 60.1px;
-  margin-bottom: -28.9px;
+
+/* Featured Blogs Section Styles */
+.featured-blogs {
+  margin-bottom: 80px;
+  min-height: 20vh;
 }
 
-.sectionStyle .headerThree {
-  font-size: 30px;
+.featuredblogheader {
+  font-family: 'Amita', serif;
+  font-size: xxx-large;
+
 }
 
-.headerThree {
-  margin-top: 30px;
-  margin-bottom: 2px;
+.slick-list {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.DSSection {
-  background-color: #F2EFE9;
-  height: 300px;
+/* Inline #1 | http://localhost:5173/ */
+
+.slick-prev,
+.slick-next {
+  width: 10vh;
+  height: 100vh;
 }
 
-.mainProfileSection {
-  background-color: #ffffff;
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: center;
+
+section.featured-recipes:nth-child(2) {
+  margin-bottom: 80px;
 }
 
-.profilecard {
-  width: 350px;
-  height: 350px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
+
+.slick-slider {
+  margin: 0 -15px;
 }
 
-.profilecardPic {
-  background-image: url('./images/profile.png');
-  width: 350px;
-  height: 250px;
-  background-repeat: no-repeat;
+.slick-slide {
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Share recipe section*/
+.share-recipe {
+  background-image: url('./assets/section.svg');
   background-size: cover;
+  padding: 100px;
+  background-position: 50%;
 }
 
-.profileRatings {
-  background-image: url('./images/user-check.png');
-  width: 350px;
-  height: 30px;
-  background-position: 265px 0px;
-  background-repeat: no-repeat;
-  font-size: 20px;
+/* Header Styles */
+header {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.profileHeader {
+/* Heading Styles */
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+/* Section Styles */
+section {
+  margin-bottom: 80px;
+}
+
+/* Recipe Card Styles */
+.recipe-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.featured-recipes h2 {
+  font-family: 'Amita', serif;
+}
+
+.recipe-card img {
   width: 100%;
-  /* height: 80px; */
-  background-color: #ffffff;
-  text-align: center;
+  height: 200px;
+  object-fit: cover;
 }
 
-/* .profilecardInfo {
-  font-size: 10px;
-  text-align: center;
-  margin: 0%;
-} */
-.profilecardInfo {
-  font-size: 22px;
-  text-align: center;
-  margin-top: 10px;
-}
-.profileHeader {
-  width: 100%;
-  /* height: 80px; */
-  background-color: #ffffff;
+.recipe-details {
+  padding: 15px;
 }
 
-.ProfileHead {
-  height: 450px;
-  margin-bottom: 40px;
-}
-
-.BakingHead {
-  height: 450px;
-  margin-bottom: 40px;
-  background-color: #F2EFE9
-}
-
-.BakingHeader {
-  background-image: url('./images/BakingPic.png');
-  background-size: cover;
-  background-position: 10px 20px;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 250px;
-  background-color: #F2EFE9;
+.recipe-details h3 {
   margin-bottom: 10px;
 }
 
-.BHone {
-  text-align: center;
-  padding-top: 45px;
-  font-size: 80px;
-  color: #ffffff;
+.recipe-details p {
+  color: #666;
 }
 
-.mainBakingSection {
-  background-color: #F2EFE9;
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.featured-recipes {
+  margin-bottom: 30px;
+}
+
+.recipe-list-horizontal {
   display: flex;
+  overflow-x: auto;
   padding-bottom: 10px;
-  justify-content: center;
+  margin-bottom: -10px;
 }
 
-.TipsHead {
-  margin-top: 170px;
-  height: 450px;
+.recipe-list-horizontal::-webkit-scrollbar {
+  height: 8px;
 }
 
-.bakedcard {
-  width: 350px;
-  height: 350px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
+.recipe-list-horizontal::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 4px;
 }
 
-.bakedcardPic {
-  background-image: url('./images/basicbread.png');
-  width: 350px;
-  height: 250px;
-  background-repeat: no-repeat;
-  background-size: cover;
+.slick-track {
+  display: flex !important;
+  align-items: center;
 }
 
-.mainTipsSection {
-  background-image: url('./images/flatware.png');
-  height: 450px;
-  background-repeat: no-repeat;
-  background-size: cover;
+.slick-slide {
+  margin-right: 10px !important;
 }
-
-.TipsH {
-  font-size: 50px;
-  padding-top: 10px;
-  text-align: center;
-}
-
-.TipsCards {
-  height: 335px;
-  background-color: #EDD9C7;
-  display: flex;
-  justify-content: center;
-}
-
-.TipsCardsPic {
-  background-image: url('./images/tips.png');
-  width: 350px;
-  height: 250px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.TipsCardInfo {
-  width: 350px;
-  height: 100px;
-  padding-top: 10px;
-}
-
-.TipsCardOne {
-  height: 350px;
-  width: 350px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.TipsCardTwo {
-  height: 350px;
-  width: 350px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-div.bakedcard:nth-child(1) {
-  margin-left: 33px;
-}
-
-.TipsCardOne {
-  margin-left: 33px;
-}
-
-.mainBlogsSection {
-  background-image: url('./images/blog.png');
-  /* height: 450px; */
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.BlogsHeader {
-  height: 150px;
-}
-
-.BlogsCardsPic {
-  background-image: url('./images/image 10.png');
-  width: 350px;
-  height: 250px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.BlogsCardOne {
-  height: 350px;
-  width: 350px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-left: 33px;
-}
-
-.BlogsCardTwo {
-  height: 350px;
-  width: 350px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.BlogsCards {
-  height: 335px;
-  background-color: #B6AEAB;
-  display: flex;
-  justify-content: center;
-}
-
-.BlogsCards {
-  padding-top: 30px;
-}
+/* homepage ends */
 /* signin page desgin starts here */
-.container {
+.container-signin {
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -670,25 +552,25 @@ div.bakedcard:nth-child(1) {
   margin-top: 50px;
 }
 
-.container p {
+.container-signin p {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.3px;
   margin: 20px 0;
 }
 
-.container span {
+.container-signin span {
   font-size: 12px;
 }
 
-.container a {
+.container-signin a {
   color: #333;
   font-size: 13px;
   text-decoration: none;
   margin: 15px 0 10px;
 }
 
-.container button {
+.container-signin button {
   background-color: #7498A1;
   color: #fff;
   font-size: 12px;
@@ -706,7 +588,7 @@ div.bakedcard:nth-child(1) {
   background-color: #023047;
 }  
 
-.container form {
+.container-signin form {
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -716,7 +598,7 @@ div.bakedcard:nth-child(1) {
   height: 100%;
 }
 
-.container input {
+.container-signin input {
   background-color: #eee;
   border: none;
   margin: 8px 0;
@@ -740,7 +622,7 @@ div.bakedcard:nth-child(1) {
   z-index: 2;
 }
 
-.container.active .sign-in {
+.container-signin.active .sign-in {
   transform: translateX(100%);
 }
 
@@ -751,7 +633,7 @@ div.bakedcard:nth-child(1) {
   z-index: 1;
 }
 
-.container.active .sign-up {
+.container-signin.active .sign-up {
   transform: translateX(100%);
   opacity: 1;
   z-index: 5;
@@ -801,7 +683,7 @@ div.bakedcard:nth-child(1) {
   
 }
 
-.container.active .toggle-container {
+.container-signin.active .toggle-container {
   transform: translateX(-100%);
   border-radius: 0 150px 100px 0;  
 }
@@ -822,7 +704,7 @@ div.bakedcard:nth-child(1) {
     background-position: center;
 }
 
-.container.active .toggle {
+.container-signin.active .toggle {
   transform: translateX(50%);
 }
 
@@ -846,7 +728,7 @@ div.bakedcard:nth-child(1) {
   transform: translateX(-200%);
 }
 
-.container.active .toggle-left {
+.container-signin.active .toggle-left {
   transform: translateX(0);
 }
 
@@ -855,7 +737,7 @@ div.bakedcard:nth-child(1) {
   transform: translateX(0);
 }
 
-.container.active .toggle-right {
+.container-signin.active .toggle-right {
   transform: translateX(200%);
 }
 /* signin ends  */
@@ -894,6 +776,7 @@ div.bakedcard:nth-child(1) {
   justify-content: end;
    
 }
+/* back button design  */
 .previous-btn.round-btn {
   z-index: 3;
   position: absolute;
@@ -904,3 +787,4 @@ div.bakedcard:nth-child(1) {
   text-decoration: underline;
   color: #900009;
 }
+

@@ -25,7 +25,7 @@ const DropdownMenu = ({ title, values, onValueChange }) => {
           </span>
         </a>
         <div className="dropdown-content">
-          {showAll
+          {/* {showAll
             ? values.map((item, index) => (
                 <label key={index}>
                   <input
@@ -51,26 +51,31 @@ const DropdownMenu = ({ title, values, onValueChange }) => {
                   />
                   {item}
                 </label>
-              ))}
+              ))
+            }
 
           {values.length > maxItemsToShow && !showAll && (
             <a onClick={() => setShowAll(true)}>See More</a>
-          )}
-          {/* {values.length > 5 &&
-            values.map((item, index) => (
+          )} */}
+          <div className="dropdown-container">
+            {values.map((item, index) => (
               // <a key={index} href="#">
               //   {item}
               // </a>
-              <label key={index}>
+              <label
+                key={index}
+                className={`dropdown-element column-${(index % 4) + 1}`}
+              >
                 <input
                   type="checkbox"
-                  value={item}
+                  value={item || ""}
                   checked={selectedItems.includes(item)}
                   onChange={(e) => handleCheckboxChange(item, e.target.checked)}
                 />
                 {item}
               </label>
-            ))} */}
+            ))}
+          </div>
         </div>
       </div>
     </div>
