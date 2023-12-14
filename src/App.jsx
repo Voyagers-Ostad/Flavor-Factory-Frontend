@@ -1,7 +1,12 @@
-import "bootstrap/dist/css/bootstrap.css";
+import BlogPage from './pages/BlogPage'
+import './App.css'
 
-const App = () => {
-  return <div></div>;
-};
+function App() {
+  return (
+    <>
+      <BlogPage/>
+    </>
+  )
+}
 
-export default App;
+export default App
