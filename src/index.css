@@ -210,3 +210,26 @@ section {
 .slick-slide {
   margin-right: 10px !important;
 }
+
+.slick-prev::before, .slick-next::before {
+  color: #FFB47E;
+}
+
+
+/* Inline #1 | http://localhost:5174/ */
+
+.slick-prev {
+  left: -58px;
+}
+
+.slick-next {
+  right: -38px;
+}
+
+
+/* Inline #1 | http://localhost:5174/ */
+
+.slick-prev::before, .slick-next::before {
+  /* font-size: 20px; */
+  font-size: 35px;
+}
