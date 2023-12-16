@@ -1,0 +1,55 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Bootstrap light gray background color */
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
+  .vh-100 {
+    height: 100vh;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .justify-content-center {
+    justify-content: center;
+  }
+  
+  .align-items-center {
+    align-items: center;
+  }
+  
+  .w-50 {
+    width: 50%;
+  }
+  
+  .p-4 {
+    padding: 1rem;
+  }
+  
+  .border {
+    border: 1px solid #FFB47E; /* Bootstrap light border color */
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+    font-family: 'Amita', serif;
+  }
+  
+  .img-thumbnail {
+    max-width: 100%;
+    height: 55vh;
+    border: 1px solid #dee2e6; /* Bootstrap light border color */
+  }
+  
+  /* Customize additional styling as needed */
+  
