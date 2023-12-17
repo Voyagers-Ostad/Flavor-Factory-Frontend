@@ -5,12 +5,15 @@ import Footer from '../components/footer/Footer.jsx'
 
 
 
+
+
 const RecipeCreatePage = () => {
     return (
         <div>
             <Header/>
             <RecipeForm/>
             <Footer/>
+            
         </div>
     );
 };

@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Amita', serif;
+  /* font-family: 'Amita', serif; */
   color: #343a40;
   line-height: 1;
 }
@@ -52,10 +52,11 @@ body {
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 2;
   margin-top: -20px;
 }
 .dropdown-content label {
+  flex: 1 1 calc(33.33% - 10px);
   display: block;
   line-height: 2;
   margin: 5px;
@@ -64,13 +65,16 @@ body {
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
-  text-decoration: none;
+  /* text-decoration: none; */
   display: block;
   cursor: pointer;
+  font-style: italic;
 }
 
 .dropdown-content a:hover {
   background-color: #ddd;
+  text-decoration: underline !important;
+  color: #dea623 !important;
 }
 
 .dropdown:hover .dropdown-content {
@@ -90,24 +94,39 @@ body {
 }
 /* Add more styling as needed */
 /* cover picture  */
-.about-bg-pic {
-  background-image: url("./assets/about_us_background.jpg");
-  background-size: cover;
-  min-height: 350px;
-  /* opacity: 0.5; */
-  /* background-color: rgba(255, 255, 255, 0.25); */
-  display: grid;
-  /* place-items: center; */
-  margin-top: 10px;
-}
-
-.about-bg-pic p {
-  text-align: center;
-  color: #dea623;
-  font-size: 90px;
-  font-family: 'Amita', serif;
+.container-about-bg-pic {
   position: relative;
-  top: 30%;
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-image: url("./assets/about_us_background.jpg");
+  /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  min-height: 350px;
+}
+.blur-layer {  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  filter: blur(8px);
+  z-index: 1;
+}
+.about-bg-pic-title{
+  z-index: 1;    
+  /* color: white; */
+  text-align: center;
+  /* text-align: center; */
+    color: #dea623;
+    font-size: 90px;
+    font-family: 'Amita', serif;
+    position: relative;
+    /* top: 30%; */
 }
 
 /* about contents  */
@@ -637,4 +656,251 @@ div.bakedcard:nth-child(1) {
 
 .BlogsCards {
   padding-top: 30px;
+}
+/* signin page desgin starts here */
+.container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  margin-top: 50px;
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.container span {
+  font-size: 12px;
+}
+
+.container a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+.container button {
+  background-color: #7498A1;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.container button.hidden {
+  background-color: #023047;
+}  
+
+.container form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.container input {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.active .sign-in {
+  transform: translateX(100%);
+}
+
+.sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move {
+
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-icons a {
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3px;
+  width: 40px;
+  height: 40px;
+}
+
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+  
+}
+
+.container.active .toggle-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;  
+}
+
+.toggle {
+  background-color: #F2EFE9;
+  height: 100%;
+  background: linear-gradient(to right, #D1A6A6, #A5B391);
+  color: #000;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: background-image 0.6s ease-in-out;
+  background-image: url("./assets/signImage1.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.container.active .toggle {
+  transform: translateX(50%);
+}
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+  z-index: 1;
+}
+
+.toggle-left {
+  transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+  transform: translateX(0);
+}
+
+.toggle-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.active .toggle-right {
+  transform: translateX(200%);
+}
+/* signin ends  */
+/* Add this CSS to your component or a global stylesheet */
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black overlay */
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 50%;
+}
+
+/* Style the close button */
+.modal-content button {
+  background-color: transparent !important;
+  color: #000;
+  padding: 0px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+   
+}
+.previous-btn.round-btn {
+  z-index: 3;
+  position: absolute;
+  font-size: 15px;
+  padding: 8px;
+}
+.previous-btn.round-btn:hover {
+  text-decoration: underline;
+  color: #900009;
 }

@@ -85,9 +85,12 @@ const Header = () => {
               type="search"
               placeholder="Search"
             />
-            <button className="btn btn-primary px-5 mt-0 rounded-pill mx-3 signInBtn">
+            <a
+              className="btn btn-primary px-5 mt-0 rounded-pill mx-3 signInBtn"
+              href="/signin"
+            >
               Sign In
-            </button>
+            </a>
           </div>
           <div className="col-12 px-5 mt-3 d-flex flex-row navbar">
             <div className="ps-4 mb-5 pt-2">
