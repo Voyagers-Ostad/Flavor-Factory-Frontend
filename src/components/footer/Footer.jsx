@@ -8,33 +8,23 @@ const Footer = () => {
           <span className="display-5 footer_logo">Flavor Factory</span>
         </div>
         <div className="col-lg-2 col-md-2 col-sm-4 col-12">
-          <a href="">Home</a>
+          <a href="/">Home</a>
           <br />
-          <a href="">Meals</a>
+          <a href="">All Recipe</a>
           <br />
-          <a href="">Bakes</a>
+          <a href="/tips">Tips</a>
           <br />
-          <a href="">Ingredients</a>
+          <a href="/blogs">Blog</a>
           <br />
-          <a href="">Diets</a>
+          <a href="/about">About Us</a>
           <br />
-          <a href="">Occassions</a>
-          <br />
-          <a href="">Cuisines</a>
-          <br />
-          <a href="">Tips</a>
-          <br />
-          <a href="">Blog</a>
-          <br />
-          <a href="">About Us</a>
-          <br />
-          <a href="">Contact US</a>
+          <a href="/contact">Contact US</a>
           <br />
         </div>
         <div className="col-lg-3 col-md-3 col-sm-6 col-12 ps-4">
-          <a className="d-inline-block py-2" href="">
+          {/* <a className="d-inline-block py-2" href="">
             Editorial Process
-          </a>
+          </a> */}
           <br />
           <a className="d-inline-block py-2" href="">
             Terms of Service

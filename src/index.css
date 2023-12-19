@@ -40,12 +40,11 @@ body {
 }
 /* dropdown */
 /* Example CSS for the dropdown */
-.dropdown {
+/* .dropdown {
   position: relative;
   display: inline-block;
 }
-.dropbtn {
-  /* background-color: #3498db; */
+.dropbtn {  
   color: white;
   padding: 10px;
   font-size: 16px;
@@ -56,23 +55,15 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  /* min-width: 160px; */
+  background-color: #f9f9f9;  
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 2;
   margin-top: -20px;
 }
-/* .dropdown-content label {
-  flex: 1 1 calc(33.33% - 10px);
-  display: block;
-  line-height: 2;
-  margin: 5px;
-  cursor: pointer;
-} */
+
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
-  /* text-decoration: none; */
   display: block;
   cursor: pointer;
   font-style: italic;
@@ -94,12 +85,11 @@ body {
 }
 
 .dropdown-element {
-  padding: 8px;
-  /* border: 1px solid #ccc; */
+  padding: 8px;  
   margin: 2px;
-}
+} */
 /* filter elements */
-.filter-elem{
+/* .filter-elem{
   display: flex;
 }
 .filter-badge{
@@ -109,7 +99,7 @@ body {
 }
 .filter-badge a{
   margin-left: 8px;
-}
+} */
 /* Add more styling as needed */
 /* cover picture  */
 .container-about-bg-pic {
@@ -271,6 +261,7 @@ body {
   text-decoration: none;
   color: #000000;
   line-height: 1.5;
+  font-family: sans-serif;
 }
 .site_footer a:hover{
   color: #d65b5b;
@@ -749,6 +740,29 @@ section {
   transform: translateX(200%);
 }
 /* signin ends  */
+/* signup modal  */
+.modal-signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0, 0%, 0%, 0.5);
+  /* Semi-transparent black overlay */
+  z-index: 1000;
+}
+
+.modal-content-signin{
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 50%;
+}
+/* signup modal ends  */
 /* Add this CSS to your component or a global stylesheet */
 
 .modal {
@@ -760,7 +774,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: hsla(0, 0%, 0%, 0.5);
   /* Semi-transparent black overlay */
 }
 
@@ -909,3 +923,28 @@ section {
   width: 1200px;
 }
 /* blog section ends  */
+/* otp  */
+.otpDiv{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+#otpForm {
+  display: flex;
+  flex-direction: row;
+}
+.otpInput {
+  width: 60px !important;
+  height: 60px;
+  font-size: 18px;
+  text-align: center;
+  margin: 0 20px !important;
+}
+.modal-content-signin .modalCloseBtn {
+  float: right;
+  color: #000;
+  background-color: transparent;
+  font-size: 20px;
+}

@@ -1,7 +1,10 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../backButton/BackButton";
+import OtpModal from "../OtpModal";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignIn = () => {
   const history = useNavigate();
@@ -22,6 +25,7 @@ const SignIn = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const [userdata, setUserValue] = useState(false);
   const navigate = useNavigate();
 
   const handlePasswordChange = (e) => {
@@ -44,18 +48,23 @@ const SignIn = () => {
           "https://flavor-factory-m190.onrender.com/api/v1/user/signup",
           { name: signupName, email: signupEmail, password: signupPassword }
         );
-
+        // console.log(response);
+        const user = response.data.user;
+        setUserValue(user);
+        // console.log(user);
         // Handle successful authentication
         if (response.data.errors && response.data.errors.length > 0) {
           // Set the first error message to the state
           setErrorMessage(response.data.errors[0].msg);
+          toast.error(response.data.errors[0].msg);
         } else {
-          // await axios.post(
-          //   "https://flavor-factory-m190.onrender.com/api/v1/user/send-email",
-          //   { toEmail: signupEmail }
-          // );
-          setSuccessMessage("Congratualation!! Your registration is complete!");
+          const mailRes = await axios.post(
+            "https://flavor-factory-m190.onrender.com/api/v1/user/send-email",
+            { toEmail: signupEmail, otp: user.otp }
+          );
+          // setSuccessMessage("Congratualation!! Your registration is complete!");
           setIsSuccessModalOpen(true);
+          toast.success("Login Successful!");
         }
         console.log(response.data);
       } else {
@@ -67,7 +76,7 @@ const SignIn = () => {
       console.error("Authentication error:", error.response.data);
     }
   };
-  const handleCloseSuccessModal = () => {
+  const closeSuccessModal = () => {
     setIsSuccessModalOpen(false);
   };
   const handleSignInSubmit = async (e) => {
@@ -75,11 +84,11 @@ const SignIn = () => {
     try {
       console.log(signupEmail);
       console.log(signupPassword.length);
-      const requestData = {
-        // data to be sent in the request body
-        email: signupEmail,
-        password: signupPassword,
-      };
+      // const requestData = {
+      //   // data to be sent in the request body
+      //   email: signupEmail,
+      //   password: signupPassword,
+      // };
       const response = await axios.post(
         "https://flavor-factory-m190.onrender.com/api/v1/user/login",
         {
@@ -94,11 +103,16 @@ const SignIn = () => {
       if (response.data.errors && response.data.errors.length > 0) {
         // Set the first error message to the state
         setErrorMessage(response.data.errors[0].msg);
+        toast.error(response.data.errors[0].msg);
       } else {
         // console.log(response.data.token);
         // navigate("/");
         if (response.data.token) {
-          history("/dashboard", { state: { id: response.data.token } });
+          const token = response.data.token;
+          localStorage.setItem("token", token);
+          toast.success("Login successful!");
+          // history("/dashboard", { state: { id: response.data.token } });
+          navigate("/dashboard");
         }
         setSuccessMessage("Login Successful");
         // setIsSuccessModalOpen(true);
@@ -107,8 +121,10 @@ const SignIn = () => {
     } catch (error) {
       // Handle authentication error
       console.error("Authentication error:", error.response.data);
+      toast.error("Authentication error. Please try again.");
     }
   };
+
   return (
     <div
       className={`container-signin ${isSignUpActive ? "active" : ""}`}
@@ -124,24 +140,28 @@ const SignIn = () => {
             placeholder="Name"
             value={signupName}
             onChange={(e) => setSignupName(e.target.value)}
+            required
           />
           <input
             type="email"
             placeholder="Email"
             value={signupEmail}
             onChange={(e) => setSignupEmail(e.target.value)}
+            required
           />
           <input
             type="password"
             placeholder="Password"
             value={signupPassword}
             onChange={handlePasswordChange}
+            required
           />
           <input
             type="password"
             value={confirmPassword}
             onChange={handleConfirmPasswordChange}
             placeholder="Confirm Password"
+            required
           />
           {!passwordMatch && (
             <p style={{ color: "red" }}>Passwords do not match</p>
@@ -190,23 +210,29 @@ const SignIn = () => {
           </div>
         </div>
       </div>
-
+      {/* <div className="modal">
+        <div className="modal-content">
+          <button onClick={handleCloseSuccessModal}>X</button>
+          <p>{successMessage}</p>
+          <form id="otpForm">
+            {otpValues.map((value, index) => (
+              <input
+                key={index}
+                className="otpInput"
+                type="text"
+                maxLength="1"
+                value={value}
+                onChange={(e) => handleInputChange(index, e)}
+                onKeyDown={(e) => handleKeyDown(index, e)}
+                ref={(input) => (otpInputs.current[index] = input)}
+              />
+            ))}
+          </form>          
+        </div>
+      </div> */}
       {/* Success Modal */}
       {isSuccessModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <button onClick={handleCloseSuccessModal}>X</button>
-            <p>{successMessage}</p>
-            <p>
-              Please{" "}
-              <a className="btn btn-info btn-sm" href="/signin">
-                Sign in
-              </a>{" "}
-              now
-            </p>
-            {/* <button onClick={handleCloseSuccessModal}>Close</button> */}
-          </div>
-        </div>
+        <OtpModal onClose={closeSuccessModal} userdata={userdata} />
       )}
     </div>
   );
